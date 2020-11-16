@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="python-package-test",
+    name="example-package-kaushalsali",
     version="0.0.1",
     author="Kaushal Sali",
     author_email="salikaushal@gmail.com",
