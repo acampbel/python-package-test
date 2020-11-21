@@ -18,6 +18,9 @@ jobs:
         pip install
         pep517
         --user
+    - name: Run tests
+      run: >-
+        python tests/test_sometest.py
     - name: Build a binary wheel and a source tarball
       run: >-
         python -m
