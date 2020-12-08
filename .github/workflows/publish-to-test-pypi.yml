@@ -16,7 +16,7 @@ jobs:
     - name: Run unit tests
       run: >-
         python -m
-        unittest -v
+        unittest
         test_sometest.py
     - name: Install pypa/build
       run: >-
