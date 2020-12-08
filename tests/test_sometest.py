@@ -5,7 +5,7 @@ import mypackage
 
 class SomethingTest1(unittest.TestCase):
     def test_is_running(self):
-        s = mypackage.do_something()
+        s = mypackage.do_something()        
         self.assertTrue(s == "Something")
 
 
