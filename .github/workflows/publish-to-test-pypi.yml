@@ -1,6 +1,10 @@
 name: Publish Python 🐍 distributions 📦 to TestPyPI
 
-on: push
+on:
+  push:
+    # Pattern matched against refs/tags
+    tags:
+      - '*'           # Push events to every tag
 
 jobs:
   build-n-publish:
