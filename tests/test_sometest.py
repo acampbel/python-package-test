@@ -1,5 +1,7 @@
 import unittest
 
+import numpy as np
+
 import mypackage
 
 
@@ -13,6 +15,12 @@ class SomethingTest2(unittest.TestCase):
     def test_is_running(self):
         s = mypackage.do_something()
         self.assertFalse(s == "Otherthing")
+
+
+class SomethingTest3(unittest.TestCase):
+    def test_is_running(self):
+        s = np.floor(3.5).astype(int)
+        self.assertTrue(s == 3)
 
 
 if __name__ == '__main__':
