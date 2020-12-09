@@ -1,10 +1,11 @@
 name: Publish Python 🐍 distributions 📦 to TestPyPI
 
-on:
-  push:
-    # Pattern matched against refs/tags
-    tags:
-      - '*'           # Push events to every tag
+on: push
+#on:
+#  push:
+#    # Pattern matched against refs/tags
+#    tags:
+#      - '*'           # Push events to every tag
 
 jobs:
   build-n-publish:
@@ -13,6 +14,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
+      with:
+        ref: ${{ github.ref }}
+
     - name: Set up Python 3.7
       uses: actions/setup-python@v1
       with:
