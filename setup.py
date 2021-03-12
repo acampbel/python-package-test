@@ -5,7 +5,8 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="example-package-kaushalsali",
-    version="2.0.0",
+    use_scm_version=True,
+    setup_requires=['setuptools_scm'],
     author="Kaushal Sali",
     author_email="salikaushal@gmail.com",
     description="A small example package",
