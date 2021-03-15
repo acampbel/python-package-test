@@ -7,4 +7,5 @@ def do_something():
     print('-----------')
     print(np.arange(5))
     # return "Otherthing"
+
     return "Something"
