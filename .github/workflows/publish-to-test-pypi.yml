@@ -48,7 +48,7 @@ jobs:
     - name: Install MATLAB
       uses: matlab-actions/setup-matlab@v0
       with:
-        release: R2019b
+        release: R2020a
 
     - name: Show Matlab directory
       run: ls /usr/local/MATLAB/R2020b/extern/engines/python
@@ -59,7 +59,7 @@ jobs:
         cd /usr/local/MATLAB/R2020b/extern/engines/python
         pwd
         ls
-        python setup.py install
+        sudo python setup.py install
 
 #    - name: Run unit tests
 #      run: >-
