@@ -19,7 +19,7 @@ jobs:
 
     - uses: actions/checkout@master
       with:
-        repository: alexanderlerch/ACA-Code.git
+        repository: alexanderlerch/ACA-Code
         path: ./ACA
 
     - name: Set up Python 3.6
