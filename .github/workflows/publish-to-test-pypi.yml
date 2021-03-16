@@ -26,8 +26,8 @@ jobs:
 #        repository: alexanderlerch/ACA-Code
 #        path: ./ACA
 #
-#    - name: Show Working directory
-#      run: ls
+    - name: Show Working directory
+      run: ls
 #
     - name: Set up Python 3.6
       uses: actions/setup-python@v2
