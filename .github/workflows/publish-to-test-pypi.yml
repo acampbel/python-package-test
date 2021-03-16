@@ -57,7 +57,8 @@ jobs:
         cd /usr/local/MATLAB/R2020b/extern/engines/python
         pwd
         ls
-        sudo python setup.py install
+        mkdir ~/matlab-engine-build
+        sudo python setup.py --build-base="~/matlab-engine-build" install
 
 #    - name: Run unit tests
 #      run: >-
