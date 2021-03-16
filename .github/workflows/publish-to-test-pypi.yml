@@ -51,6 +51,13 @@ jobs:
     - name: Change directory to Matlab engine script
       run: cd /usr/local/MATLAB/R2020b/extern/engines/python
 
+
+    - name: Print Working directory
+      run: pwd
+
+    - name: Show Matlab directory
+      run: ls
+
     - name: Install matlab engine
       run: python setup.py install
 
