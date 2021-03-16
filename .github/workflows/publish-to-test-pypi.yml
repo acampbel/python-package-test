@@ -47,8 +47,6 @@ jobs:
 
     - name: Install MATLAB
       uses: matlab-actions/setup-matlab@v0
-      with:
-        release: R2020a
 
     - name: Show Matlab directory
       run: ls /usr/local/MATLAB/R2020b/extern/engines/python
