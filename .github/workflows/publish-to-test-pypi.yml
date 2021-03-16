@@ -35,7 +35,7 @@ jobs:
         python-version: 3.6
 
     - name: Install distutils
-      run: pip install distutils
+      run: sudo apt-get install python3-distutils
 
     - name: List python packages
       run: pip list
