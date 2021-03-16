@@ -34,9 +34,6 @@ jobs:
       with:
         python-version: 3.6
 
-    - name: Install distutils
-      run: sudo apt-get install python3-distutils
-
     - name: List python packages
       run: pip list
 
@@ -50,6 +47,7 @@ jobs:
 
     - name: Install MATLAB
       uses: matlab-actions/setup-matlab@v0
+        release: R2018a
 
     - name: Show Matlab directory
       run: ls /usr/local/MATLAB/R2020b/extern/engines/python
