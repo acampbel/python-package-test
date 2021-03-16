@@ -40,19 +40,19 @@ jobs:
 #        pip install -r requirements.txt
 
     - name: Show Working directory
-      run: ls
+      run: ls /usr/local/
 
     - name: Install MATLAB
       uses: matlab-actions/setup-matlab@v0
 
     - name: Show Working directory
-      run: ls
+      run: ls /usr/local/
 
     - name: Show Matlab directory
-      run: ls /usr/local/MATLAB
+      run: ls /usr/local/MATLAB/R2020b
 
     - name: Show Matlab directory
-      run: ls /usr/local/MATLAB/extern/engines/python
+      run: ls /usr/local/MATLAB/R2020b/extern/engines/python
 
 #    - name: Run unit tests
 #      run: >-
