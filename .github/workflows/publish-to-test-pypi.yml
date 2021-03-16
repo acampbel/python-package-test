@@ -34,7 +34,7 @@ jobs:
 
 
     - name: Install MATLAB
-        uses: matlab-actions/setup-matlab@v0
+      uses: matlab-actions/setup-matlab@v0
 
 
     - name: Run unit tests
