@@ -58,7 +58,7 @@ jobs:
         pwd
         ls
         mkdir ~/matlab-engine-build
-        sudo python setup.py --build-base="~/matlab-engine-build" install
+        python setup.py build --build-base="~/matlab-engine-build" install
 
 #    - name: Run unit tests
 #      run: >-
