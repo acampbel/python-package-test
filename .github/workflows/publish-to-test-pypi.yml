@@ -43,6 +43,11 @@ jobs:
     - name: Install MATLAB
       uses: matlab-actions/setup-matlab@v0
 
+    - name: Show Working directory
+      run: ls
+
+    - name: Show Matlab directory
+      run: ls /usr/local
 
     - name: Run unit tests
       run: >-
