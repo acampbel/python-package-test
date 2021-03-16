@@ -14,21 +14,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-#    - name: Checkout current repo
-#      uses: actions/checkout@master
-#
+    - name: Checkout current repo
+      uses: actions/checkout@master
+
+    - name: Checkout ACA repo for matlab cross-check testing
+      uses: actions/checkout@master
+      with:
+        repository: alexanderlerch/ACA-Code
+        path: ./ACA
+
 #    - name: Show Working directory
-#      run: ls
-#
-#    - name: Checkout ACA repo for matlab cross-check testing
-#      uses: actions/checkout@master
-#      with:
-#        repository: alexanderlerch/ACA-Code
-#        path: ./ACA
-#
-    - name: Show Working directory
-      run: pwd
-#
+#      run: pwd
+
     - name: Set up Python 3.6
       uses: actions/setup-python@v2
       with:
@@ -37,10 +34,10 @@ jobs:
     - name: List python packages
       run: pip list
 
-#    - name: Install dependencies
-#      run: |
-#        python -m pip install --upgrade pip
-#        pip install -r requirements.txt
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
 
     - name: Print Working directory
       run: pwd
@@ -55,15 +52,13 @@ jobs:
       run: |
         python --version
         cd /usr/local/MATLAB/R2020b/extern/engines/python
-        pwd
-        ls
         python setup.py build --build-base="/home/runner/work/python-package-test/matlab-engine-build" install
 
-#    - name: Run unit tests
-#      run: >-
-#        python -m
-#        unittest
-#        tests/test_sometest.py
+    - name: Run unit tests
+      run: >-
+        python -m
+        unittest
+        tests/test_sometest.py
 #
 #    - name: Install pypa/build
 #      run: >-
