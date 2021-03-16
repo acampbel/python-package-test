@@ -55,7 +55,10 @@ jobs:
         ls
 
     - name: Install matlab engine
-      run: python setup.py install
+      run: |
+        pwd
+        ls
+        python setup.py install
 
 #    - name: Run unit tests
 #      run: >-
