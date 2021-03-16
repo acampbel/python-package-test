@@ -14,13 +14,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout current repo
     - uses: actions/checkout@master
 
+    - name: Show Working directory
+      run: ls
 
+    - name: Checkout ACA repo for matlab cross-check testing
     - uses: actions/checkout@master
       with:
         repository: alexanderlerch/ACA-Code
         path: ./ACA
+
+    - name: Show Working directory
+      run: ls
 
     - name: Set up Python 3.6
       uses: actions/setup-python@v2
