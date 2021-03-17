@@ -54,7 +54,7 @@ jobs:
         cd /usr/local/MATLAB/R2020b/extern/engines/python
         python setup.py build --build-base="/home/runner/work/python-package-test/matlab-engine-build" install --prefix="/home/runner/work/python-package-test/matlab-engine-install"
         ls /home/runner/work/python-package-test/matlab-engine-install/lib
-        echo "PYTHONPATH=${PYTHONPATH}:/home/runner/work/python-package-test/matlab-engine-install/lib" >> $GITHUB_ENV
+        echo "PYTHONPATH=/home/runner/work/python-package-test/matlab-engine-install/lib" >> $GITHUB_ENV
 
 
     - name: Echo PYTHONPATH
