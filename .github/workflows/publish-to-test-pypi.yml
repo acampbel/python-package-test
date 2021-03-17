@@ -56,7 +56,9 @@ jobs:
 #        echo "PYTHONPATH=/home/runner/work/python-package-test/matlab-engine-install/lib/python3.6/site-packages/" >> $GITHUB_ENV
 
     - name: Show Matlab directory
-      run: ls /usr/local/MATLAB/R2020b/
+      run: |
+        ls /usr/local/MATLAB/R2020b/
+        echo $PATH
 
     - name: Run unit tests
       run: |
