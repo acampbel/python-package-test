@@ -53,10 +53,10 @@ jobs:
         python --version
         cd /usr/local/MATLAB/R2020b/extern/engines/python
         python setup.py build --build-base="/home/runner/work/python-package-test/matlab-engine-build" install --prefix="/home/runner/work/python-package-test/matlab-engine-install"
-        echo "::set-env name=PYTHONPATH::/home/runner/work/python-package-test/matlab-engine-install"
+        echo "{PYTHONPATH}={/home/runner/work/python-package-test/matlab-engine-install}" >> $GITHUB_ENV
         echo $PYTHONPATH
 
-    - name: Echo Path
+    - name: Echo PYTHONPATH
       run: echo $PYTHONPATH
 
     - name: Run unit tests
