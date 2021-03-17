@@ -62,7 +62,7 @@ jobs:
     - name: Run unit tests
       run: |
         echo $PYTHONPATH
-        python -m unittest matlab.engine tests/test_sometest.py
+        python -m unittest tests/test_sometest.py
 #
 #    - name: Install pypa/build
 #      run: >-
