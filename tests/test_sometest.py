@@ -1,6 +1,8 @@
 import unittest
 import numpy as np
 
+import ssl
+
 from importlib import util as imputil
 matlab_spec = imputil.find_spec("matlab")  # importlib.util.find_spec works for python3 >= v3.4
 if matlab_spec is not None:
