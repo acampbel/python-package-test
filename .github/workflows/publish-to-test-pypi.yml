@@ -63,7 +63,7 @@ jobs:
       run: |
         export PYTHONPATH=/home/runner/work/python-package-test/matlab-engine-install
         echo $PYTHONPATH
-        python -m unittest tests/test_sometest.py
+        python -m unittest matlab.engine tests/test_sometest.py
 #
 #    - name: Install pypa/build
 #      run: >-
