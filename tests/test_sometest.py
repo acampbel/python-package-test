@@ -1,6 +1,12 @@
 import unittest
 import numpy as np
-import matlab.engine
+
+from importlib import util as imputil
+matlab_spec = imputil.find_spec("matlab")  # importlib.util.find_spec works for python3 >= v3.4
+if matlab_spec is not None:
+    import matlab.engine
+
+# import matlab.engine
 #matlab_engine = matlab.engine.start_matlab()
 
 import mypackage
