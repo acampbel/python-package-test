@@ -61,7 +61,6 @@ jobs:
 
     - name: Run unit tests
       run: |
-#        export PYTHONPATH=/home/runner/work/python-package-test/matlab-engine-install
         echo $PYTHONPATH
         python -m unittest matlab.engine tests/test_sometest.py
 #
