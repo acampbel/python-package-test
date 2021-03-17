@@ -45,9 +45,6 @@ jobs:
     - name: Install MATLAB
       uses: matlab-actions/setup-matlab@v0
 
-    - name: Show Matlab directory
-      run: ls /usr/local/MATLAB/R2020b/extern/engines/python
-
     - name: Install Matlab Engine
       run: |
         python --version
@@ -58,11 +55,13 @@ jobs:
 #        ls /home/runner/work/python-package-test/matlab-engine-install/lib
 #        echo "PYTHONPATH=/home/runner/work/python-package-test/matlab-engine-install/lib/python3.6/site-packages/" >> $GITHUB_ENV
 
+    - name: Show Matlab directory
+      run: ls /usr/local/MATLAB/R2020b/licenses
 
     - name: Run unit tests
       run: |
         echo $PYTHONPATH
-        sudo python -m unittest tests/test_sometest.py
+        python -m unittest tests/test_sometest.py
 #
 #    - name: Install pypa/build
 #      run: >-
