@@ -1,7 +1,7 @@
 import unittest
 import numpy as np
 import matlab.engine
-matlab_engine = matlab.engine.start_matlab()
+#matlab_engine = matlab.engine.start_matlab()
 
 import mypackage
 
