@@ -1,15 +1,13 @@
+import os
+import sys
+import logging
 import unittest
 import numpy as np
 
 import ssl
-
-from importlib import util as imputil
-matlab_spec = imputil.find_spec("matlab")  # importlib.util.find_spec works for python3 >= v3.4
-if matlab_spec is not None:
-    import matlab.engine
-
-# import matlab.engine
+import matlab.engine
 #matlab_engine = matlab.engine.start_matlab()
+path_to_matlab_code="./ACA"
 
 import mypackage
 
@@ -30,6 +28,38 @@ class SomethingTest3(unittest.TestCase):
     def test_is_running(self):
         s = np.floor(3.5).astype(int)
         self.assertTrue(s == 3)
+
+
+class SomethingTestWithMatlab(unittest.TestCase):
+    logger = logging.getLogger(__name__)
+    logging.basicConfig(level=logging.INFO)
+
+    def __init__(self, *args, **kwargs):
+        super(SomethingTestWithMatlab, self).__init__(*args, **kwargs)
+        self.matlab_engine = None
+        path_valid = os.path.exists(path_to_matlab_code)
+        init_engine = True
+
+        if 'matlab.engine' not in sys.modules:
+            self.logger.warning("matlab package not found")
+            init_engine = False
+        if not path_valid:
+            self.logger.warning("Invalid path to Matlab code")
+            init_engine = False
+
+        if init_engine:
+            self.matlab_engine = matlab.engine.start_matlab()
+            self.matlab_engine.cd(path_to_matlab_code)
+
+    def __del__(self):
+        if self.matlab_engine is not None:
+            self.matlab_engine.quit()
+
+    def test_all_features(self):
+
+        if self.matlab_engine is None:
+            self.skipTest("Matlab engine not available")
+
 
 
 if __name__ == '__main__':
