@@ -54,7 +54,7 @@ jobs:
     - name: Install Matlab Engine
       run: |
         python --version
-        cd /usr/local/MATLAB/R2020b/extern/engines/python
+        cd /usr/local/MATLAB/R2020a/extern/engines/python
         python setup.py build --build-base="/home/runner/work/python-package-test/matlab-engine-build" install
 
 #        python setup.py build --build-base="/home/runner/work/python-package-test/matlab-engine-build" install --prefix="/home/runner/work/python-package-test/matlab-engine-install"
@@ -63,8 +63,8 @@ jobs:
 
     - name: Show Matlab directory
       run: |
-        cat /usr/local/MATLAB/R2020b/license_agreement.txt
-        echo "/usr/local/MATLAB/R2020b/bin" >> $GITHUB_PATH
+        cat /usr/local/MATLAB/R2020a/license_agreement.txt
+        echo "/usr/local/MATLAB/R2020a/bin" >> $GITHUB_PATH
         echo $PATH
 
     - name: Run unit tests
