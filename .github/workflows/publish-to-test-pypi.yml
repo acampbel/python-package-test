@@ -49,27 +49,33 @@ jobs:
       with:
         release: R2020a
 
-    - name: Install Matlab Engine
-      run: |
-        python --version
-        cd /usr/local/MATLAB/R2020a/extern/engines/python
-        python setup.py build --build-base=$(mktemp -d) install
+    - name: Run script
+      uses: matlab-actions/run-command@v0
+      with:
+        command: ACA/ComputeFeature
 
-#        python setup.py build --build-base="/home/runner/work/python-package-test/matlab-engine-build" install --prefix="/home/runner/work/python-package-test/matlab-engine-install"
-#        ls /home/runner/work/python-package-test/matlab-engine-install/lib
-#        echo "PYTHONPATH=/home/runner/work/python-package-test/matlab-engine-install/lib/python3.6/site-packages/" >> $GITHUB_ENV
-
-    - name: Show Matlab directory
-      run: |
-        echo "/usr/local/MATLAB/R2020a/bin" >> $GITHUB_PATH
-        echo $PATH
-#        cat /usr/local/MATLAB/R2020a/license_agreement.txt
-
-    - name: Run unit tests
-      run: |
-        echo $PYTHONPATH
-        echo $PATH
-        python -m unittest tests/test_sometest.py
+#    - name: Install Matlab Engine
+#      run: |
+#        python --version
+#        cd /usr/local/MATLAB/R2020a/extern/engines/python
+#        python setup.py build --build-base=$(mktemp -d) install
+#
+##        python setup.py build --build-base="/home/runner/work/python-package-test/matlab-engine-build" install --prefix="/home/runner/work/python-package-test/matlab-engine-install"
+##        ls /home/runner/work/python-package-test/matlab-engine-install/lib
+##        echo "PYTHONPATH=/home/runner/work/python-package-test/matlab-engine-install/lib/python3.6/site-packages/" >> $GITHUB_ENV
+#
+#    - name: Show Matlab directory
+#      run: |
+#        echo "/usr/local/MATLAB/R2020a/bin" >> $GITHUB_PATH
+#        echo $PATH
+#        ls /usr/local/MATLAB/R2020a
+##        cat /usr/local/MATLAB/R2020a/license_agreement.txt
+#
+#    - name: Run unit tests
+#      run: |
+#        echo $PYTHONPATH
+#        echo $PATH
+#        python -m unittest tests/test_sometest.py
 
 #    - name: Install pypa/build
 #      run: >-
