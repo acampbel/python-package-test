@@ -30,7 +30,7 @@ jobs:
 
     - name: whoami
       run: |
-        whoami
+        ip addr | grep ether
 
 
 #    - name: Set up Python 3.6
