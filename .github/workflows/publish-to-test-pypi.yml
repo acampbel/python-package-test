@@ -53,7 +53,7 @@ jobs:
       run: |
         python --version
         cd /usr/local/MATLAB/R2020a/extern/engines/python
-        python setup.py build --build-base="/home/runner/work/python-package-test/matlab-engine-build" install
+        python setup.py build --build-base=$(mktemp -d) install
 
 #        python setup.py build --build-base="/home/runner/work/python-package-test/matlab-engine-build" install --prefix="/home/runner/work/python-package-test/matlab-engine-install"
 #        ls /home/runner/work/python-package-test/matlab-engine-install/lib
