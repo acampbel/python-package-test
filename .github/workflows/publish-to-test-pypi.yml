@@ -71,7 +71,7 @@ jobs:
       run: |
         echo $PYTHONPATH
         echo $PATH
-        python -m unittest tests/test_sometest.py
+        python -m unittest python-package-test/tests/test_sometest.py
 
 #    - name: Install pypa/build
 #      run: >-
